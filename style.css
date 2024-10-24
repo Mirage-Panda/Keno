@@ -1,9 +1,11 @@
+@import url("colors.css");
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: SF Pro Text;
   text-align: center;
   margin: 0;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: var(--ctp-latte-base);
 }
 
 .grid-container {
@@ -17,8 +19,8 @@ body {
 .grid-item {
   width: 50px;
   height: 50px;
-  background-color: #ddd;
-  border: 2px solid #ccc;
+  background-color: var(--ctp-latte-mantle);
+  border: 2px solid var(--ctp-latte-overlay0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,12 +33,22 @@ body {
     transform 0.2s; /* Animation for color and scale */
 }
 
-.grid-item:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
+.tick {
+  background-color: var(--ctp-mocha-green); /* Color for tick */
+  font-size: 24px; /* Adjust size as needed */
+  border: 2px solid var(--ctp-latte-green);
 }
 
-.grid-item.disabled {
-  pointer-events: none;
+.cross {
+  background-color: var(--ctp-mocha-red); /* Color for cross */
+  font-size: 24px; /* Adjust size as needed */
+  border: 2px solid var(--ctp-latte-red);
+}
+
+.grid-item:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  /* background-color: var(--ctp-latte-surface1); */
+  /* border: 2px solid var(--ctp-latte-overlay2); */
 }
 
 #resetBtn {
@@ -45,11 +57,13 @@ body {
   font-size: 16px;
   border-radius: 8px; /* Rounded corners */
   transition: background-color 0.3s ease; /* Animation */
+  background-color: var(--ctp-latte-base); /* Change color on hover */
+  color: var(--ctp-latte-text);
 }
 
 #resetBtn:hover {
-  background-color: #444; /* Change color on hover */
-  color: white;
+  background-color: var(--ctp-mocha-base); /* Change color on hover */
+  color: var(--ctp-mocha-text);
 }
 
 .popup {
@@ -75,7 +89,7 @@ body {
 #closePopup {
   padding: 10px 20px;
   background-color: #333;
-  color: white;
+  color: red;
   border: none;
   border-radius: 8px; /* Rounded corners */
   cursor: pointer;
@@ -93,7 +107,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(var(--ctp-mocha-base-rgb) / 0.5);
 }
 
 .modal-content {
@@ -108,7 +122,7 @@ body {
 }
 
 .close {
-  color: #aaa;
+  color: var(--ctp-latte-red);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -118,33 +132,43 @@ body {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--ctp-latte-text);
   text-decoration: none;
   cursor: pointer;
 }
 
 /* Terminal style for developer mode */
 .terminal-style {
-  background-color: white;
-  color: black;
+  background-color: var(--ctp-latte-mantle);
+  color: var(--ctp-mocha-crust);
   font-family: "Fira Code CustomLigatures", monospace;
   padding: 15px;
   border-radius: 8px;
 }
+.terminal-style input {
+  background-color: var(--ctp-latte-crust);
+  color: var(--ctp-mocha-crust);
+  font-family: "Fira Code CustomLigatures", monospace;
+  border-radius: 8px;
+  padding: 5px; /* Add padding to input fields */
+}
 
-.terminal-style input,
+.terminal-style input:focus {
+  background-color: var(--ctp-latte-base);
+  border: 2px solid var(--ctp-latte-green); /* Rounded corners */
+}
+
 .terminal-style button {
-  background-color: white;
-  color: black;
-  border: 1px solid green;
+  background-color: var(--ctp-latte-base);
+  color: var(--ctp-mocha-crust);
   font-family: "Fira Code CustomLigatures", monospace;
   border-radius: 8px; /* Rounded corners */
   padding: 5px; /* Add padding to input fields */
 }
 
 .terminal-style button:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--ctp-latte-base);
+  border: 2px solid var(--ctp-latte-red);
 }
 
 /* Keyframe animations */
