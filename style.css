@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.grid-item {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded corners */
+  transition:
+    background-color 0.3s,
+    transform 0.2s; /* Animation for color and scale */
+}
+
+.grid-item:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.grid-item.disabled {
+  pointer-events: none;
+}
+
+#resetBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Animation */
+}
+
+#resetBtn:hover {
+  background-color: #444; /* Change color on hover */
+  color: white;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px; /* Rounded corners */
+  animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+#closePopup {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#closePopup:hover {
+  background-color: #555;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: left;
+  border-radius: 8px; /* Rounded corners */
+  animation: slideDown 0.5s; /* Slide-down animation */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 50%; /* Rounded close button */
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Terminal style for developer mode */
+.terminal-style {
+  background-color: white;
+  color: black;
+  font-family: "Fira Code CustomLigatures", monospace;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.terminal-style input,
+.terminal-style button {
+  background-color: white;
+  color: black;
+  border: 1px solid green;
+  font-family: "Fira Code CustomLigatures", monospace;
+  border-radius: 8px; /* Rounded corners */
+  padding: 5px; /* Add padding to input fields */
+}
+
+.terminal-style button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

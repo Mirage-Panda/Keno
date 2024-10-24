@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keno Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Keno Game</h1>
+    <p id="tokensWon">Tokens Won: 0</p>
+
+    <div class="grid-container" id="kenoGrid">
+      <!-- Grid will be generated here -->
+    </div>
+
+    <button id="resetBtn">Reset Game</button>
+
+    <div id="popup" class="popup">
+      <div class="modal-content terminal-style">
+        <span class="close" id="closePopupWinning">&times;</span>
+        <!-- Close button -->
+        <h2>Game Over</h2>
+        <p id="finalMessage">You won X tokens!</p>
+        <!-- Removed the large Close button -->
+      </div>
+    </div>
+
+    <div id="developerPassphraseModal" class="modal">
+      <div class="modal-content terminal-style">
+        <span class="close">&times;</span>
+        <h2>Developer Mode</h2>
+        <label for="passphraseInput">Enter Passphrase:</label>
+        <input type="text" id="passphraseInput" style="width: 100px" />
+        <button id="submitPassphrase">Submit</button>
+      </div>
+    </div>
+
+    <div id="developerModal" class="modal">
+      <div class="modal-content terminal-style">
+        <span class="close">&times;</span>
+        <h2>Developer Mode</h2>
+        <label for="probabilityInput">Set Win Probability (0 - 100):</label>
+        <input
+          type="number"
+          id="probabilityInput"
+          step="1"
+          min="0"
+          max="100"
+          style="width: 100px"
+        />
+        <br />
+        <label for="gridSizeInput">Grid Size (1 - 20):</label>
+        <input
+          type="number"
+          id="gridSizeInput"
+          step="1"
+          min="1"
+          max="20"
+          style="width: 100px"
+        />
+        <br />
+        <label for="maxSelectionsInput">Max Selections (1 - 20):</label>
+        <input
+          type="number"
+          id="maxSelectionsInput"
+          step="1"
+          min="1"
+          max="20"
+          style="width: 100px"
+        />
+        <button id="applySettings">Apply</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
