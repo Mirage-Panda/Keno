@@ -75,9 +75,9 @@ function showFinalPopup() {
 }
 
 // Close the winning popup
-document.getElementById('closePopupWinning').onclick = () => {
-    popup.style.display = "none"; // Hide winning popup
-};
+document.getElementById('closePopupWinning').addEventListener('click', function() {
+    popup.style.display = "none"; // Hide the winning popup
+});
 
 // Reset the game
 function resetGame() {
