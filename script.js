@@ -45,13 +45,17 @@ function checkGuess(gridItem) {
     }
 
     selections++;
+
+    // Remove previous tick/cross classes (if any)
+    gridItem.classList.remove('tick', 'cross');
+
     if (Math.random() < winProbability) { // Adjust probability check
-        gridItem.style.backgroundColor = 'green';
-        gridItem.textContent = '✔';
+        gridItem.textContent = '✔'; // Add a tick
+        gridItem.classList.add('tick'); // Add tick class for styling
         correctGuesses++;
     } else {
-        gridItem.style.backgroundColor = 'red';
-        gridItem.textContent = '✘';
+        gridItem.textContent = '✘'; // Add a cross
+        gridItem.classList.add('cross'); // Add cross class for styling
     }
     gridItem.classList.add('disabled');
 
