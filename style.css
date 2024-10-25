@@ -77,7 +77,6 @@ body {
 }
 
 .popup-content {
-  background-color: #fff;
   margin: 15% auto;
   padding: 20px;
   width: 300px;
@@ -89,7 +88,6 @@ body {
 #closePopup {
   padding: 10px 20px;
   background-color: #333;
-  color: red;
   border: none;
   border-radius: 8px; /* Rounded corners */
   cursor: pointer;
@@ -111,7 +109,7 @@ body {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--ctp-latte-base);
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
